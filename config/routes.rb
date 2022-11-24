@@ -33,6 +33,15 @@ Rails.application.routes.draw do
     resources :subs do
       resources :topics
     end
+
+    resources :topics, except: [:index, :show, :create, :update, :destroy] do
+      resources :comments
+    end
+
+    # resources :comments, except: [:index, :show, :create, :update, :destroy] do
+    #   resources :likes
+    # end
+
   end
 
   # if there is a another model and is a child of this model then the
