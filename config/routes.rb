@@ -30,7 +30,9 @@ Rails.application.routes.draw do
   # resources :subs, except: [:index, :update]
 
   namespace :api do 
-    resources :subs
+    resources :subs do
+      resources :topics
+    end
   end
 
   # if there is a another model and is a child of this model then the
