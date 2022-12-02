@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import SubForm from './SubForm';
+import { Link } from 'react-router-dom';
 
 const SubShow = ({ id, title, updateSub, deleteSub }) => {
 // const SubShow = (props) => {
@@ -32,6 +33,14 @@ const SubShow = ({ id, title, updateSub, deleteSub }) => {
           <button onClick={() => deleteSub(id)}>
             Delete
           </button>
+          <Link 
+            to={`/${id}/topics`}
+            state={{ title }} // pass in read only info through the link
+          >
+            <button>
+              Topics
+            </button>
+          </Link>
         </>
       }
     </>

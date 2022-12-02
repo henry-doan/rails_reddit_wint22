@@ -4,6 +4,8 @@ import About from './components/shared/About';
 import Nomatch from './components/shared/Nomatch';
 import Subs from './components/subs/Subs';
 import MainNavbar from './components/shared/MainNavbar';
+import Topics from './components/topics/Topics';
+import Comments from './components/comments/Comments';
 
 // incharge naviational routes, 
 // define pages using react router
@@ -18,6 +20,8 @@ const App = () => (
       <Route path='/' element={<Home />} />
       <Route path='/about' element={<About />} />
       <Route path='/subs' element={<Subs />} />
+      <Route path='/:subId/topics' element={<Topics />} />
+      <Route path='/:topicId/Comments' element={<Comments />} />
       {/* if the page or url does not exist then go to the nomatch */}
       <Route path='/*' element={<Nomatch />} />
     </Routes>
